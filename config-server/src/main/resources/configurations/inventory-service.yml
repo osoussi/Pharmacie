@@ -1,9 +1,10 @@
 server:
   port: 8181
+
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/pharmacie
+    url: jdbc:postgresql://localhost:5432/pharmacy-db
     username: postgres
     password: admin
   jpa:
@@ -11,3 +12,8 @@ spring:
       ddl-auto: update
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type: TRACE
