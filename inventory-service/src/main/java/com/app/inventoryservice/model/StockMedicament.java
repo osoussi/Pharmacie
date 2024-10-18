@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 public class StockMedicament {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
 
     @ManyToOne
     private Medicament medicament;

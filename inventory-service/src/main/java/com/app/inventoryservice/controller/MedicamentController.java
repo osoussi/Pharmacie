@@ -18,7 +18,7 @@ public class MedicamentController {
     private final MedicamentService service;
 
     @PostMapping("/createMed")
-    public ResponseEntity<String> createMed(
+    public ResponseEntity<Integer> createMed(
             @RequestBody @Valid MedicamentRequest request
     ) {
         return ResponseEntity.ok(this.service.createMedicament(request));
@@ -39,21 +39,21 @@ public class MedicamentController {
 
     @GetMapping("/exists/{medicament-id}")
     public ResponseEntity<Boolean> existsById(
-            @PathVariable("medicament-id") String medId
+            @PathVariable("medicament-id") Integer medId
     ) {
         return ResponseEntity.ok(this.service.existsById(medId));
     }
 
     @GetMapping("/find/{medicament-id}")
     public ResponseEntity<MedicamentResponse> findById(
-            @PathVariable("medicament-id") String medId
+            @PathVariable("medicament-id") Integer medId
     ) {
         return ResponseEntity.ok(this.service.findById(medId));
     }
 
     @DeleteMapping("/delete/{medicament-id}")
     public ResponseEntity<Void> delete(
-            @PathVariable("medicament-id") String medId
+            @PathVariable("medicament-id") Integer medId
     ) {
         this.service.deleteMedicament(medId);
         return ResponseEntity.accepted().build();

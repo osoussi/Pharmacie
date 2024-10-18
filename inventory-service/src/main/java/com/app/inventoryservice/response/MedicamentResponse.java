@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public record MedicamentResponse(
-        String id,
+        Integer id,
         String nom,
         String description,
         Double prix,

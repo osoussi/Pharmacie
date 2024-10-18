@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import java.time.LocalDate;
 
 public record MedicamentRequest(
-        String id,
+        Integer id,
         @NotNull(message = "nom is required")
         String nom,
         String description,

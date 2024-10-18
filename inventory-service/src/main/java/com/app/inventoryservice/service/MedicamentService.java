@@ -20,7 +20,7 @@ public class MedicamentService {
     private final MedicamentRepository repository;
     private final MedicamentMapper mapper;
 
-    public String createMedicament(MedicamentRequest request) {
+    public Integer createMedicament(MedicamentRequest request) {
         Medicament medicament = repository.save(mapper.toMedicament(request));
         return medicament.getId();
     }
@@ -34,7 +34,7 @@ public class MedicamentService {
         repository.save(medicament);
     }
 
-    public void deleteMedicament(String id) {
+    public void deleteMedicament(Integer id) {
         if (!existsById(id)) {
             throw new MedicamentNotFoundException(
                     String.format("Cannot delete Medicament: No Medicament found with the provided ID: %s", id)
@@ -50,7 +50,7 @@ public class MedicamentService {
                 .collect(Collectors.toList());
     }
 
-    public MedicamentResponse findById(String id) {
+    public MedicamentResponse findById(Integer id) {
         return repository.findById(id)
                 .map(mapper::fromMedicament)
                 .orElseThrow(() -> new MedicamentNotFoundException(
@@ -76,7 +76,7 @@ public class MedicamentService {
         }
     }
 
-    public boolean existsById(String id) {
+    public boolean existsById(Integer id) {
         return repository.existsById(id);
     }
 

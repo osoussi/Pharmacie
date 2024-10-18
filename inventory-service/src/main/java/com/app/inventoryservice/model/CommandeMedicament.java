@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class CommandeMedicament {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
 
     @ManyToOne
     private Medicament medicament;

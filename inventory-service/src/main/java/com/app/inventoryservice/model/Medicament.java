@@ -16,7 +16,7 @@ import java.time.LocalDate;
 public class Medicament {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String id;
+    private Integer id;
     private String nom;
     private String description;
     private Double prix;
